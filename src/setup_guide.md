@@ -16,7 +16,7 @@ The only line that needs to be in the file is: `exec i3`
 Once i3 succesfully initializes for the first time, you will be given the option of uses the default configuration or choosing between the windows button or `alt` as your modifier (Mod) key.
 The default behavior is the windows key.
 
-#Basic keybindings :
+# Basic keybindings :
 * `Mod + D`: A dmenu bar will pop up on the top of the screen. Start typing the name of the file you'd like to execute and it will show up in the search bar. For example, typing in `firefox` will start the Firefox browser if it's installed.
 * `Mod + <numkey>`: Will switch to workspace #<numkey>
 * `Mod + Shift + <numkey>`: Will switch window to workspace #<numkey>
