@@ -10,3 +10,4 @@ Rpi.gpio (raspbian gpio library)
 
 [Python bindings in C tutorial](https://docs.python.org/2/extending/extending.html)
 
+[Raspberry Pi Pinout (and more)](https://pinout.xyz)
