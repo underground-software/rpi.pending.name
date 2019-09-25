@@ -19,5 +19,5 @@ The default behavior is the windows key.
 #Basic keybindings:
 * `Mod + D`: A dmenu bar will pop up on the top of the screen. Start typing the name of the file you'd like to execute and it will show up in the search bar. For example, typing in `firefox` will start the Firefox browser if it's installed.
 * `Mod + <numkey>`: Will switch to workspace #<numkey>
-* `Mod + Shift + <numkey>: Will switch window to workspace #<numkey>
+* `Mod + Shift + <numkey>`: Will switch window to workspace #<numkey>
 * `Mod + Enter`: Opens a new terminal window
