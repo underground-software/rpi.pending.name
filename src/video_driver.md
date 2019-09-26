@@ -2,9 +2,13 @@ potential useful driver:
 https://github.com/ssvb/xf86-video-fbturbo/wiki/Installation
 
 installed:  (^ = possibly not required)
+
 	`automake`
+
 	`xorg-x11-util-macros`
+
 	`^libXrandr-devel`
+
 	`yum group install "X Software Development"`
 
 
@@ -20,3 +24,6 @@ autom4te.cache/output.1:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
 configure.ac:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
 configure:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
 
+
+
+This might be due to lack of compatibility with Fedora. Driver was built for Debian so devel packages might be different.
