@@ -1,4 +1,4 @@
-## The basics
+## GUI basics
 
 Run the following commands once logged in:
 
@@ -6,7 +6,7 @@ Run the following commands once logged in:
 
 `dnf install i3 i3status dmenu i3lock`
 
-`dnf install firefox`
+`dnf install firefox` and/or `dnf install chromium`
 
 Create a `.xinitrc` file for your user if it doesn't already exist.
 The only line that needs to be in the file is: `exec i3`
@@ -23,6 +23,3 @@ The default behavior is the windows key.
 * `Mod + Enter`: Opens a new terminal window
 
 
-## GPIO setup
-
-`dnf install libgpiod python3-libgpiod`
