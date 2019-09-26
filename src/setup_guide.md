@@ -21,3 +21,8 @@ The default behavior is the windows key.
 * `Mod + <numkey>`: Will switch to workspace #<numkey>
 * `Mod + Shift + <numkey>`: Will switch window to workspace #<numkey>
 * `Mod + Enter`: Opens a new terminal window
+
+
+## GPIO setup
+
+`dnf install libgpiod python3-libgpiod`
