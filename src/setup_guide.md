@@ -1,7 +1,7 @@
 ## GUI basics
 
 
-# Installing i3wm
+# Installing i3wm/Enlightenment
 Run the following commands once logged in:
 
 `dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth x11-dbus xterm`
@@ -12,6 +12,8 @@ Run the following commands once logged in:
 
 Create a `.xinitrc` file for your user if it doesn't already exist.
 The only line that needs to be in the file is: `exec i3`
+
+If installing Enlightenment, `exec enlightenment_start` should be writted to `.xinitrc`
 
 `startx` can be used to initialize i3 now.
 
