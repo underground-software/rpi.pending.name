@@ -6,7 +6,7 @@ Run the following commands once logged in:
 
 `dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth x11-dbus xterm`
 
-`dnf install i3 i3status dmenu i3lock`
+`dnf install i3 i3status dmenu i3lock` for enlightenment, `dnf install enlightenment` instead.
 
 `dnf install firefox` and/or `dnf install chromium`
 
