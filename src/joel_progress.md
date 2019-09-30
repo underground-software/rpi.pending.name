@@ -1,7 +1,7 @@
 
 #### 9/30
 
-* We been [known](known_issues.html) for some time that once cannot `git clone` the linux kernel to the device, as attemps to do so have resulted in git failing due to lack of RAM
+* We have [known](known_issues.html) for some time that once cannot `git clone` the linux kernel to the device, as attemps to do so have resulted in git failing due to lack of RAM
 * I attempted to repartition my microSD card with an ~7.5GB partition of type `linux-swap` at the end and try again.
 * The `git clone` appeared to be making more progress than it did during previous attempts, but near the end of the "resolving deltas" stage, the device crashed
 * When I rebooted, systemd failed to mount the filesystems on the microSD card, which I believe was due to my forgetting to add an entry to `/etc/fstab` corresponding to new swap partiton.
