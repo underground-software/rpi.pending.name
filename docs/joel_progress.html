@@ -40,6 +40,15 @@ ga('send', 'pageview');
 <h1>NAME PENDING</h1>
 
 <p><a href="https://pending.name">home</a> | <a href="index.html">rpi</a> | <a href="wiki.html">wiki</a> | <a href="status_report.html">status reports</a></p>
-<p><a href="fabreeze_progress.html">Fabrizio</a></p>
+<h4>9/30</h4>
 
-<p><a href="joel_progress.html">Joel</a></p>
+<ul>
+<li>We been <a href="known_issues.html">known</a> for some time that once cannot <code>git clone</code> the linux kernel to the device, as attemps to do so have resulted in git failing due to lack of RAM</li>
+<li>I attempted to repartition my microSD card with an ~7.5GB partition of type <code>linux-swap</code> at the end and try again.</li>
+<li>The <code>git clone</code> appeared to be making more progress than it did during previous attempts, but near the end of the &ldquo;resolving deltas&rdquo; stage, the device crashed</li>
+<li>When I rebooted, systemd failed to mount the filesystems on the microSD card, which I believe was due to my forgetting to add an entry to <code>/etc/fstab</code> corresponding to new swap partiton.</li>
+<li>There may be more to the problem than the above, but I then realized that I was acutally running the RPi 3 Model B V1.2 instead of our standard development device, the RPi 3 Model B+</li>
+<li>I will try and redo my test on the latter device</li>
+<li>I also identified the existing default swap space as not being disk-backed, see <a href="known_issues.html">known issues</a> for more information</li>
+</ul>
+
