@@ -47,3 +47,8 @@ For a web browser, `dnf install` one or more of the following packages:
 * `chromium`
 * `midori`
 
+Not all pages are working correctly on midori because of qt bug.
+
+Might help:
+`glx-utils`
+
