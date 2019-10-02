@@ -8,7 +8,7 @@ Run the following commands once logged in:
 
 `dnf install i3 i3status dmenu i3lock`
 
-`dnf install firefox` and/or `dnf install chromium`
+`dnf install firefox` and/or `dnf install chromium` and/or `dnf install midori`
 
 Create a `.xinitrc` file for your user if it doesn't already exist.
 The only line that needs to be in the file is: `exec i3`
