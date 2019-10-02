@@ -50,25 +50,17 @@ ga('send', 'pageview');
 
 <p><code>dnf install i3 i3status dmenu i3lock</code></p>
 
-<p>for enlightenment, <code>dnf install enlightenment</code> instead.</p>
-
 <p><code>dnf install firefox</code> and/or <code>dnf install chromium</code></p>
 
 <p>Create a <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
 The only line that needs to be in the file is: <code>exec i3</code></p>
-
-<p>If installing Enlightenment, <code>exec enlightenment_start</code> should be writted to <code>.xinitrc</code></p>
-
-<p>There are more dependencies for enlightenment than i3. We&rsquo;re not sure of the mininal requirement.</p>
-
-<p><code>dnf install xorg-x11-*</code> for now.</p>
 
 <p><code>startx</code> can be used to initialize i3 now.</p>
 
 <p>Once i3 succesfully initializes for the first time, you will be given the option of uses the default configuration or choosing between the windows button or <code>alt</code> as your modifier (Mod) key.
 The default behavior is the windows key.</p>
 
-<h3>Basic keybindings :</h3>
+<h3>Basic i3 keybindings :</h3>
 
 <ul>
 <li><code>Mod + D</code>: A dmenu bar will pop up on the top of the screen. Start typing the name of the file you&rsquo;d like to execute and it will show up in the search bar. For example, typing in <code>firefox</code> will start the Firefox browser if it&rsquo;s installed.</li>
@@ -77,3 +69,15 @@ The default behavior is the windows key.</p>
 <li><code>Mod + Enter</code>: Opens a new terminal window</li>
 </ul>
 
+
+<h1>Installing Enlightenment</h1>
+
+<p><code>dnf install enlightenment</code></p>
+
+<p>write  <code>exec enlightenment_start</code> to  <code>.xinitrc</code></p>
+
+<p>There are more dependencies for enlightenment than i3. We&rsquo;re not sure of the mininal requirement.</p>
+
+<p><code>dnf install xorg-x11-*</code> for now.</p>
+
+<p><code>startx</code> can be used to initialize Enlightenment now.</p>
