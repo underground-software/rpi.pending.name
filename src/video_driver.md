@@ -5,13 +5,13 @@ Steps followed:
 
 installed:  (^ = possibly not required)
 
-	`automake`
+`automake`
 
-	`xorg-x11-util-macros`
+`xorg-x11-util-macros`
 
-	`^libXrandr-devel`
+`^libXrandr-devel`
 
-	`yum group install "X Software Development"`
+`yum group install "X Software Development"`
 
 
 `autoreconf -vi` : successful
@@ -20,15 +20,15 @@ installed:  (^ = possibly not required)
 
 syntax error:
 
-unexpected token near: RANDR,
-configure: line 15399: XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
+`unexpected token near: RANDR,
+configure: line 15399: XORG_DRIVER_CHECK_EXT(RANDR, randrproto)`
 
 `grep -r "RANDR"`:
 
-autom4te.cache/output.0:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
+`autom4te.cache/output.0:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
 autom4te.cache/output.1:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
 configure.ac:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
-configure:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)
+configure:XORG_DRIVER_CHECK_EXT(RANDR, randrproto)`
 
 I meant to include line numbers but forgot, run with `grep -rn` instead to find line numbers. Doesn't match up with line number given in error output.
 
