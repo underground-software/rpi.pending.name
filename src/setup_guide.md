@@ -6,7 +6,9 @@ Run the following commands once logged in:
 
 `dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm`
 
-`dnf install i3 i3status dmenu i3lock` for enlightenment, `dnf install enlightenment` instead.
+`dnf install i3 i3status dmenu i3lock`
+
+for enlightenment, `dnf install enlightenment` instead.
 
 `dnf install firefox` and/or `dnf install chromium`
 
@@ -14,6 +16,10 @@ Create a `.xinitrc` file for your user if it doesn't already exist.
 The only line that needs to be in the file is: `exec i3`
 
 If installing Enlightenment, `exec enlightenment_start` should be writted to `.xinitrc`
+
+There are more dependencies for enlightenment than i3. We're not sure of the mininal requirement.
+
+`dnf install xorg-x11-*` for now.
 
 `startx` can be used to initialize i3 now.
 
