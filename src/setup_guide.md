@@ -41,7 +41,8 @@ For now, just run `dnf install xorg-x11-*` to install the dependencies and much,
 
 ### 3. Install basic desktop utilities
 
-For a web browser, `dnf install` one or more of the following:
+For a web browser, `dnf install` one or more of the following packages:
+
 * `firefox`
 * `chromium`
 * `midori`

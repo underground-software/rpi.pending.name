@@ -40,19 +40,21 @@ ga('send', 'pageview');
 <h1>NAME PENDING</h1>
 
 <p><a href="https://pending.name">home</a> | <a href="index.html">rpi</a> | <a href="wiki.html">wiki</a> | <a href="status_report.html">status reports</a></p>
-<h2>GUI basics</h2>
+<h1>GUI basics</h1>
 
-<h1>Installing i3wm/Enlightenment</h1>
+<p>Type <code>text like this</code> at the command prompt once logged in:</p>
 
-<p>Run the following commands once logged in:</p>
+<h3>1. Install the GUI backend</h3>
 
 <p><code>dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm</code></p>
 
+<p>Continue to 2b for a windows/mac like desktop, or continue with 2a if you would like a challenge.</p>
+
+<h3>2a. Install i3wm</h3>
+
 <p><code>dnf install i3 i3status dmenu i3lock</code></p>
 
-<p><code>dnf install firefox</code> and/or <code>dnf install chromium</code></p>
-
-<p>Create a <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
+<p>Create an <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
 The only line that needs to be in the file is: <code>exec i3</code></p>
 
 <p><code>startx</code> can be used to initialize i3 now.</p>
@@ -60,7 +62,7 @@ The only line that needs to be in the file is: <code>exec i3</code></p>
 <p>Once i3 succesfully initializes for the first time, you will be given the option of uses the default configuration or choosing between the windows button or <code>alt</code> as your modifier (Mod) key.
 The default behavior is the windows key.</p>
 
-<h3>Basic i3 keybindings :</h3>
+<h4>Basic i3 keybindings:</h4>
 
 <ul>
 <li><code>Mod + D</code>: A dmenu bar will pop up on the top of the screen. Start typing the name of the file you&rsquo;d like to execute and it will show up in the search bar. For example, typing in <code>firefox</code> will start the Firefox browser if it&rsquo;s installed.</li>
@@ -70,14 +72,26 @@ The default behavior is the windows key.</p>
 </ul>
 
 
-<h1>Installing Enlightenment</h1>
+<h3>2b. Install enlightenment</h3>
 
 <p><code>dnf install enlightenment</code></p>
 
-<p>write  <code>exec enlightenment_start</code> to  <code>.xinitrc</code></p>
+<p>Create an <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
+The only line that needs to be in the file is: <code>exec enlightenment_start</code></p>
 
 <p>There are more dependencies for enlightenment than i3. We&rsquo;re not sure of the mininal requirement.</p>
 
-<p><code>dnf install xorg-x11-*</code> for now.</p>
+<p>For now, just run <code>dnf install xorg-x11-*</code> to install the dependencies and much, more more.</p>
 
 <p><code>startx</code> can be used to initialize Enlightenment now.</p>
+
+<h3>3. Install basic desktop utilities</h3>
+
+<p>For a web browser, <code>dnf install</code> one or more of the following:</p>
+
+<ul>
+<li><code>firefox</code></li>
+<li><code>chromium</code></li>
+<li><code>midori</code></li>
+</ul>
+
