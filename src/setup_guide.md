@@ -28,6 +28,8 @@ The default behavior is the windows key.
 
 ### 2b. Install enlightenment
 
+`dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xterm`
+
 `dnf install enlightenment`
 
 Create an `.xinitrc` file for your user if it doesn't already exist.
@@ -48,6 +50,11 @@ For a web browser, `dnf install` one or more of the following packages:
 * `midori`
 
 Not all pages are working correctly on midori because of qt bug.
+Certain sites will cause the browser to fail loading any page.
+
+There is some issue with libEGL and mesalibEGL which seems to be common for RPis in general. There is a fix for raspbian.
+
+https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-due-to-libegl
 
 Might help:
 `glx-utils`
