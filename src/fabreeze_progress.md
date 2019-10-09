@@ -10,11 +10,14 @@
 
 #### 10/4
 
+* Revised installation procedure for desktop environments
+
 * Investigated lightweight browsers to pair with Enlightenment.
 	- Midori web browser seems promising but there is a problem with libEGL which affects QT applications like Midori.
 Fixing this might be useful if it provides a usable browser.
 
 #### 10/11
 
-* Annoted libgpiod python bindings
-* Looked into install numpy, sense-hat
+* Annoted libgpiod python bindings, looking into adding property attributes for the tools
+
+* Looked into installing numpy and sense-hat, working on a minimal dependency list.
