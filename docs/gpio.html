@@ -42,6 +42,8 @@ ga('send', 'pageview');
 <p><a href="https://pending.name">home</a> | <a href="index.html">rpi</a> | <a href="wiki.html">wiki</a> | <a href="status_report.html">status reports</a></p>
 <h2>GPIO setup</h2>
 
+<h3>To install the latest Fedora package of libgpiod and its python bindings:</h3>
+
 <p><code>dnf install libgpiod python3-libgpiod</code></p>
 
 <p>https://llllllllll.github.io/c-extension-tutorial/member-vs-getset.html</p>
@@ -49,3 +51,26 @@ ga('send', 'pageview');
 <h3>Our libgpiod fork:</h3>
 
 <p><a href="https://github.com/underground-software/libgpiod.git">Source code is on Github</a></p>
+
+<h3>How to build libgpiod from source:</h3>
+
+<ol>
+<li><p>Install dependencies:</p>
+
+<p> <code>dnf install make gcc autoconf autoconf-archive automake m4 libtool</code></p></li>
+<li><p>Clone the repository (linked above)</p></li>
+<li><p>Generate Makefiles for building libgpiod, the python bindings, and some tools</p>
+
+<p> <code>cd libgpiod</code></p>
+
+<p> <code>./autogen.sh --enable-bindings-python --enable-tools</code></p>
+
+<p> <code>make &amp;&amp; make install</code></p></li>
+<li><p>To view documentation for libgpiod, run the following in a python interpreter</p>
+
+<p> <code>import gpiod</code></p>
+
+<p> <code>help(gpiod)</code></p></li>
+<li><p>For more information, view the README in the root of the repository</p></li>
+</ol>
+
