@@ -74,6 +74,8 @@ The default behavior is the windows key.</p>
 
 <h3>2b. Install enlightenment</h3>
 
+<p><code>dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xterm</code></p>
+
 <p><code>dnf install enlightenment</code></p>
 
 <p>Create an <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
@@ -96,7 +98,12 @@ The only line that needs to be in the file is: <code>exec enlightenment_start</c
 </ul>
 
 
-<p>Not all pages are working correctly on midori because of qt bug.</p>
+<p>Not all pages are working correctly on midori because of qt bug.
+Certain sites will cause the browser to fail loading any page.</p>
+
+<p>There is some issue with libEGL and mesalibEGL which seems to be common for RPis in general. There is a fix for raspbian.</p>
+
+<p>https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-due-to-libegl</p>
 
 <p>Might help:
 <code>glx-utils</code></p>

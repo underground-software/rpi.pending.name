@@ -40,33 +40,20 @@ ga('send', 'pageview');
 <h1>NAME PENDING</h1>
 
 <p><a href="https://pending.name">home</a> | <a href="index.html">rpi</a> | <a href="wiki.html">wiki</a> | <a href="status_report.html">status reports</a></p>
-<h4>9/27</h4>
+<h1>Installing sensehat</h1>
 
-<ul>
-<li><p>Investigated i3wm and Englightenment DE.</p></li>
-<li><p>Investigated potentially useful <a href="video_driver.html">video driver</a></p></li>
-<li><p>Created a minimal image and <a href="setup_guide.html">setup guide</a> for i3.</p></li>
-<li><p>Studied implementation of libgpiod Python bindings, will focus on improving them and providing higher level abstractions to match RPi.GPIO library.</p></li>
-</ul>
+<p><code>numpy</code> must be installed</p>
 
+<h1>Installing numpy</h1>
 
-<h4>10/4</h4>
+<p>Remember to run these commands as root.</p>
 
-<ul>
-<li>Investigated lightweight browsers to pair with Enlightenment.
+<p><code>dnf install python3-pip</code></p>
 
-<ul>
-<li>Midori web browser seems promising but there is a problem with libEGL which affects QT applications like Midori.
-Fixing this might be useful if it provides a usable browser.</li>
-</ul>
-</li>
-</ul>
+<p><code>dnf install gcc</code></p>
 
+<p><code>dnf install python3-devel zlib-devel llibjpeg-devel</code></p>
 
-<h4>10/11</h4>
+<p><code>pip3 install -U pip</code></p>
 
-<ul>
-<li>Annoted libgpiod python bindings</li>
-<li>Looked into install numpy, sense-hat</li>
-</ul>
-
+<p><code>pip3 install numpy</code></p>
