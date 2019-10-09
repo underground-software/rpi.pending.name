@@ -8,4 +8,13 @@
 
 * Studied implementation of libgpiod Python bindings, will focus on improving them and providing higher level abstractions to match RPi.GPIO library.
 
+#### 10/4
 
+* Investigated lightweight browsers to pair with Enlightenment.
+	- Midori web browser seems promising but there is a problem with libEGL which affects QT applications like Midori.
+Fixing this might be useful if it provides a usable browser.
+
+#### 10/11
+
+* Annoted libgpiod python bindings
+* Looked into install numpy, sense-hat
