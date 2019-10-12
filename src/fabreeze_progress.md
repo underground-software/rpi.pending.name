@@ -21,3 +21,6 @@ Fixing this might be useful if it provides a usable browser.
 * Annoted libgpiod python bindings, looking into adding property attributes for the tools
 
 * Looked into installing numpy and sense-hat, working on a minimal dependency list.
+
+* Working on compatibility layer for RPi.GPIO code and libgpiod
+
