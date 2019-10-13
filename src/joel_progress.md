@@ -1,3 +1,7 @@
+#### 10/13
+
+* Working on RPi.GPIO -> libgpiod compatibility layer [source](https://github.com/underground-software/libgpiod/tree/example_wrap)
+* Patched upstream libgpiod config [commit](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/commit/?id=9ed02fc793b332773658f3ba09f45a058e75b0a8)
 
 #### 9/30
 
