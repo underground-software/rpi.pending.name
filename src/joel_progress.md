@@ -1,3 +1,11 @@
+#### 10/20
+
+* Continued to work with Fabrizio on compatibility layer, just need to do event handling now
+* Discovered a warning thrown by the kernel when attempting to create an invalid proc dir via default behavior of `libgpiod/bindings/python/examples/gpiomon.py`
+* The program passes `sys.argv[0]` to [`ioctl(2)`](http://man7.org/linux/man-pages/man2/ioctl.2.html), which causes the kernel to throw a warning and the `/proc/irq/<n>/<dirname>/` directory not to be created
+* Event detection still works, but this is mildly not sane behavior. We will tweak the call to fix the issue on the libgpiod side
+* In addition, the warning was mildly cryptic, so we posted a patch to the [linux kernel mailing list](https://lkml.org/lkml/2019/10/20/169)
+
 #### 10/13
 
 * Working on RPi.GPIO -> libgpiod compatibility layer [source](https://github.com/underground-software/libgpiod/tree/example_wrap)
