@@ -1,3 +1,9 @@
+#### 11/13
+
+* Fabrizio and I have (pre-)released the first version of our RPI.GPIO -> libgpiod compatibility layer.
+* Download the RPM [here](https://github.com/underground-software/python3-libgpiod-rpi/releases/tag/v0.1).
+* Go [here](python3-libgpiod-rpi.html) for more information.
+
 #### 10/20
 
 * Continued to work with Fabrizio on compatibility layer, just need to do event handling now
