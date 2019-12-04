@@ -40,8 +40,20 @@ ga('send', 'pageview');
 <h1>NAME PENDING</h1>
 
 <p><a href="https://pending.name">home</a> | <a href="index.html">rpi</a> | <a href="wiki.html">wiki</a> | <a href="status_report.html">status reports</a> | <a href="results.html"> results </a> </p>
-<h1>Results:</h1>
+<h2>pulseaudio</h2>
 
-<h4><a href="python3-libgpiod-rpi.html">python3-libgpiod-rpi</a></h4>
+<h4>Summary:</h4>
 
-<h4><a href="pulseaudio.md">pulseaudio</a></h4>
+<p>Pulseaudio isn&rsquo;t installed properly in the minimal Fedora Image,
+and it&rsquo;s not immediately obvious how to setup, however installing a
+package fixed it.</p>
+
+<h4>Problem:</h4>
+
+<p>Package <code>alsa-plugins-pulseaudio</code> and it&rsquo;s dependencies aren&rsquo;t installed</p>
+
+<h4>Solution:</h4>
+
+<p><code>bash
+sudo yum install alsa-plugins-pulseaudio # Should resolve alsa and pulseaudio as deps
+</code></p>
