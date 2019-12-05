@@ -1,61 +1,58 @@
-# GUI basics
+# Setup
 
 Type `text like this` at the command prompt once logged in:
 
-### 1. Install the GUI backend
+## Image and Flashing
 
-`dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm`
+Grab an image from [here](https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi?rd=Raspberry_Pi#ARMv7_supported_images)
 
-Continue to 2b for a windows/mac like desktop, or continue with 2a if you would like a challenge.
+### From Fedora
+The recommended way to install it is to use fedora-arm-image-installer:
 
-### 2a. Install i3wm
+`sudo fedora-arm-image-installer --image=Fedora-Minimal-30-1.2.aarch64.raw.xz --target=rpi3 --media=/dev/mmcblk0 --resizefs`
 
-`dnf install i3 i3status dmenu i3lock` 
+### Not from Fedora
+If you aren't on a fedora machine, you can run:
 
-Create an `.xinitrc` file for your user if it doesn't already exist.
-The only line that needs to be in the file is: `exec i3`
+`xzcat Fedora-IMAGE-NAME.raw.xz | sudo dd status=progress bs=4M of=/dev/XXX # Location of your media (will be sdX or mmcblkX depending on hardware)`
 
-`startx` can be used to initialize i3 now.
+and resize the / partition by using:
 
-Once i3 succesfully initializes for the first time, you will be given the option of uses the default configuration or choosing between the windows button or `alt` as your modifier (Mod) key.
-The default behavior is the windows key.
+`sudo gparted /dev/xxx` where XXX is sdX or mmcblkX (use lsblk to find out)
 
-#### Basic i3 keybindings:
-* `Mod + D`: A dmenu bar will pop up on the top of the screen. Start typing the name of the file you'd like to execute and it will show up in the search bar. For example, typing in `firefox` will start the Firefox browser if it's installed.
-* `Mod + <numkey>`: Will switch to workspace \# <numkey>
-* `Mod + Shift + <numkey>`: Will switch window to workspace \# <numkey>
-* `Mod + Enter`: Opens a new terminal window
+## Post Installation
 
-### 2b. Install enlightenment
+- updated the fedora packages
 
-`dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xterm`
+	`sudo dnf update`
 
-`dnf install enlightenment`
+- set the GPU memory to 80 (default 32) to support camera
 
-Create an `.xinitrc` file for your user if it doesn't already exist.
-The only line that needs to be in the file is: `exec enlightenment_start`
+	`vi /boot/efi/config.txt `
 
-There are more dependencies for enlightenment than i3. We're not sure of the mininal requirement.
+- change the value for GPU memory from 32 to 80
 
-For now, just run `dnf install xorg-x11-*` to install the dependencies and much, more more.
+- Install enlightenment Desktop package and chromium browser
 
-`startx` can be used to initialize Enlightenment now.
+	`sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm`
 
-### 3. Install basic desktop utilities
+	`sudo dnf install enlightenment`
 
-For a web browser, `dnf install` one or more of the following packages:
+	`sudo dnf install chromium`
 
-* `firefox`
-* `chromium`
-* `midori`
+- Install audio drivers
 
-Not all pages are working correctly on midori because of qt bug.
-Certain sites will cause the browser to fail loading any page.
+	`sudo dnf install alsa-plugins-pulseaudio`
 
-There is some issue with libEGL and mesalibEGL which seems to be common for RPis in general. There is a fix for raspbian.
+- start the desktop
 
-https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-due-to-libegl
+	`startx`
 
-Might help:
-`glx-utils`
+- run through desktop initialization menu.
+
+- Need to add the new GPIO binding packages
+(TODO) Joel and Fabrizio?
+
+- imotion setup.  
+- Jeff to add this.  Its quite a process.  I need to recreate and will add soon.
 

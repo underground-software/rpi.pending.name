@@ -40,70 +40,57 @@ ga('send', 'pageview');
 <h1>NAME PENDING</h1>
 
 <p><a href="https://pending.name">home</a> | <a href="index.html">rpi</a> | <a href="wiki.html">wiki</a> | <a href="status_report.html">status reports</a> | <a href="results.html"> results </a> </p>
-<h1>GUI basics</h1>
+<h1>Setup</h1>
 
 <p>Type <code>text like this</code> at the command prompt once logged in:</p>
 
-<h3>1. Install the GUI backend</h3>
+<h2>Image and Flashing</h2>
 
-<p><code>dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm</code></p>
+<p>Grab an image from <a href="https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi?rd=Raspberry_Pi#ARMv7_supported_images">here</a></p>
 
-<p>Continue to 2b for a windows/mac like desktop, or continue with 2a if you would like a challenge.</p>
+<h3>From Fedora</h3>
 
-<h3>2a. Install i3wm</h3>
+<p>The recommended way to install it is to use fedora-arm-image-installer:</p>
 
-<p><code>dnf install i3 i3status dmenu i3lock</code></p>
+<p><code>sudo fedora-arm-image-installer --image=Fedora-Minimal-30-1.2.aarch64.raw.xz --target=rpi3 --media=/dev/mmcblk0 --resizefs</code></p>
 
-<p>Create an <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
-The only line that needs to be in the file is: <code>exec i3</code></p>
+<h3>Not from Fedora</h3>
 
-<p><code>startx</code> can be used to initialize i3 now.</p>
+<p>If you aren&rsquo;t on a fedora machine, you can run:</p>
 
-<p>Once i3 succesfully initializes for the first time, you will be given the option of uses the default configuration or choosing between the windows button or <code>alt</code> as your modifier (Mod) key.
-The default behavior is the windows key.</p>
+<p><code>xzcat Fedora-IMAGE-NAME.raw.xz | sudo dd status=progress bs=4M of=/dev/XXX # Location of your media (will be sdX or mmcblkX depending on hardware)</code></p>
 
-<h4>Basic i3 keybindings:</h4>
+<p>and resize the / partition by using:</p>
 
-<ul>
-<li><code>Mod + D</code>: A dmenu bar will pop up on the top of the screen. Start typing the name of the file you&rsquo;d like to execute and it will show up in the search bar. For example, typing in <code>firefox</code> will start the Firefox browser if it&rsquo;s installed.</li>
-<li><code>Mod + &lt;numkey&gt;</code>: Will switch to workspace # <numkey></li>
-<li><code>Mod + Shift + &lt;numkey&gt;</code>: Will switch window to workspace # <numkey></li>
-<li><code>Mod + Enter</code>: Opens a new terminal window</li>
-</ul>
+<p><code>sudo gparted /dev/xxx</code> where XXX is sdX or mmcblkX (use lsblk to find out)</p>
 
-
-<h3>2b. Install enlightenment</h3>
-
-<p><code>dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xterm</code></p>
-
-<p><code>dnf install enlightenment</code></p>
-
-<p>Create an <code>.xinitrc</code> file for your user if it doesn&rsquo;t already exist.
-The only line that needs to be in the file is: <code>exec enlightenment_start</code></p>
-
-<p>There are more dependencies for enlightenment than i3. We&rsquo;re not sure of the mininal requirement.</p>
-
-<p>For now, just run <code>dnf install xorg-x11-*</code> to install the dependencies and much, more more.</p>
-
-<p><code>startx</code> can be used to initialize Enlightenment now.</p>
-
-<h3>3. Install basic desktop utilities</h3>
-
-<p>For a web browser, <code>dnf install</code> one or more of the following packages:</p>
+<h2>Post Installation</h2>
 
 <ul>
-<li><code>firefox</code></li>
-<li><code>chromium</code></li>
-<li><code>midori</code></li>
+<li><p>updated the fedora packages</p>
+
+<p>  <code>sudo dnf update</code></p></li>
+<li><p>set the GPU memory to 80 (default 32) to support camera</p>
+
+<p>  <code>vi /boot/efi/config.txt</code></p></li>
+<li><p>change the value for GPU memory from 32 to 80</p></li>
+<li><p>Install enlightenment Desktop package and chromium browser</p>
+
+<p>  <code>sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm</code></p>
+
+<p>  <code>sudo dnf install enlightenment</code></p>
+
+<p>  <code>sudo dnf install chromium</code></p></li>
+<li><p>Install audio drivers</p>
+
+<p>  <code>sudo dnf install alsa-plugins-pulseaudio</code></p></li>
+<li><p>start the desktop</p>
+
+<p>  <code>startx</code></p></li>
+<li><p>run through desktop initialization menu.</p></li>
+<li><p>Need to add the new GPIO binding packages
+(TODO) Joel and Fabrizio?</p></li>
+<li><p>imotion setup.</p></li>
+<li>Jeff to add this.  Its quite a process.  I need to recreate and will add soon.</li>
 </ul>
 
-
-<p>Not all pages are working correctly on midori because of qt bug.
-Certain sites will cause the browser to fail loading any page.</p>
-
-<p>There is some issue with libEGL and mesalibEGL which seems to be common for RPis in general. There is a fix for raspbian.</p>
-
-<p>https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-due-to-libegl</p>
-
-<p>Might help:
-<code>glx-utils</code></p>
