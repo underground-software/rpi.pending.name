@@ -59,4 +59,5 @@ and resize the / partition by using:
 ## TODO
 
 [ ] Conman stup
-
+[ ] Common setup steps for user creation
+[ ] Common stup steps for Enlightenment
