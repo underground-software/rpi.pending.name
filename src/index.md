@@ -1,4 +1,4 @@
-What are we up to? [Check out our Trelllo board](TODO)
+What are we up to? [Check out our Trelllo board](https://trello.com/b/YUh837YR)
 
 Interested in joining us? [Fill out this form](interest_form.html)
 
