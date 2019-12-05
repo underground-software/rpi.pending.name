@@ -34,7 +34,7 @@ and resize the / partition by using:
 
 - Install enlightenment Desktop package and chromium browser
 
-	`sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xterm`
+	`sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 terminator`
 
 	`sudo dnf install enlightenment`
 
@@ -55,4 +55,8 @@ and resize the / partition by using:
 
 - imotion setup.  
 - Jeff to add this.  Its quite a process.  I need to recreate and will add soon.
+
+## TODO
+
+[ ] Conman stup
 
