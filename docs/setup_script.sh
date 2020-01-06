@@ -33,6 +33,8 @@ sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 
 
 # start the desktop
 
+echo "exec enlightenment_start" > ~/.xinitrc
+
 startx
 
 # run through desktop initialization menu.
