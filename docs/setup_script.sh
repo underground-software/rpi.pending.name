@@ -19,7 +19,7 @@
 
 
 # updated the fedora packages
-sudo dnf update
+sudo dnf update -y
 
 # set the GPU memory to 80 (default 32) to support camera
 
