@@ -29,13 +29,13 @@ sudo sed -i s/gpu_mem=32/gpu_mem=80/g /boot/efi/config.txt
 
 # Install enlightenment Desktop package and chromium browser
 
-sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 terminator
+sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 terminator
 
-sudo dnf install enlightenment
+sudo dnf install -y enlightenment
 
-sudo dnf install chromium
+sudo dnf install -y chromium
 
-sudo dnf install alsa-plugins-pulseaudio
+sudo dnf install -y alsa-plugins-pulseaudio
 
 # start the desktop
 
