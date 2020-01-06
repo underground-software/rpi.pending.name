@@ -48,6 +48,7 @@ ga('send', 'pageview');
 <li>Go <a href="python3-libgpiod-rpi.html">here</a> for more information.</li>
 </ul>
 
+
 <h4>10/20</h4>
 
 <ul>
@@ -58,6 +59,7 @@ ga('send', 'pageview');
 <li>In addition, the warning was mildly cryptic, so we posted a patch to the <a href="https://lkml.org/lkml/2019/10/20/169">linux kernel mailing list</a></li>
 </ul>
 
+
 <h4>10/13</h4>
 
 <ul>
@@ -65,14 +67,16 @@ ga('send', 'pageview');
 <li>Patched upstream libgpiod config <a href="https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/commit/?id=9ed02fc793b332773658f3ba09f45a058e75b0a8">commit</a></li>
 </ul>
 
+
 <h4>9/30</h4>
 
 <ul>
 <li>We have <a href="known_issues.html">known</a> for some time that one cannot <code>git clone</code> the linux kernel to the device, as attemps to do so have resulted in git failing due to lack of RAM</li>
 <li>I attempted to repartition my microSD card with a ~7.5GB partition of type <code>linux-swap</code> at the end and try again.</li>
-<li>The <code>git clone</code> appeared to be making more progress than it did during previous attempts, but near the end of the "resolving deltas" stage, the device crashed</li>
+<li>The <code>git clone</code> appeared to be making more progress than it did during previous attempts, but near the end of the &ldquo;resolving deltas&rdquo; stage, the device crashed</li>
 <li>When I rebooted, systemd failed to mount the filesystems on the microSD card, which I believe was due to my forgetting to add an entry to <code>/etc/fstab</code> corresponding to new swap partiton.</li>
 <li>There may be more to the problem than the above, but I then realized that I was acutally running the RPi 3 Model B V1.2 instead of our standard development device, the RPi 3 Model B+</li>
 <li>I will try and redo my test on the latter device</li>
 <li>I also identified the existing default swap space as not being disk-backed, see <code>/dev/zram0</code> in <a href="known_issues.html">known issues</a> for more information</li>
 </ul>
+
