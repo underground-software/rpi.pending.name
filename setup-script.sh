@@ -96,7 +96,7 @@ fi
 if [ -z "$SKIP_DNF" ]
 then
 	# update the fedora packages
-	sudo dnf update || die_at "initial dnf update"
+	dnf -y update || die_at "initial dnf update"
 
 	# install window manager and prereqisites
 	dnf install -y $PKGS_X || die_at "X and window manager installation"
