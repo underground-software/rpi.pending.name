@@ -48,7 +48,7 @@ EOF
 PKGS_X="xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 enlightenment"
 
 # desktop applications
-PKGS_APPS="terminator chromium"
+PKGS_APPS="terminator firefox"
 
 # latest RPi.GPIO compatibility layer
 # TODO:
@@ -120,12 +120,4 @@ fi
 # configure the window manager
 echo ". /etc/X11/xinit/xinitrc-common" > $RPIHOME/.xinitrc || die_at "add common xinitrc code to local file"
 echo "exec enlightement_start" >> $RPIHOME/.xinitrc || die_at "add enlighement_start to xinitrc"
-
-
-cat <<EOF
-=== script has successfully finished ===
-To start the window manager, run: startx
-
-EOF
-
 exit $SUCCESS
