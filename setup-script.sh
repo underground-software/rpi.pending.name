@@ -24,17 +24,19 @@ EXIT_SUCCESS=0
 EXIT_FAILURE=1
 
 usage() {
-	echo <<EOF
+	cat <<EOF
 === fedora-rpi setup script ===
-usage: setup-script.sh [FLAGS]"
+usage: setup-script.sh [FLAGS]
 
-valid flags:
+available flags:
 	-n: do not create default rpi/rpi user
+	-s: skip installation of packages via dnf
+	-h: show this message and exit
 EOF
 }
 
 die_at() {
-	echo <<EOF
+	cat <<EOF
 >Fatal error occured at: $1
 >You should fix any errors described above and re-run this script
 >Exiting with failure...
@@ -58,10 +60,18 @@ PKGS_GPIO="https://github.com/underground-software/python3-libgpiod-rpi/releases
 PKGS_LIBS="alsa-plugins-pulseaudio"
 
 NO_USER=""
-while getopts "n" OPTION; do
+SKIP_DNF=""
+while getopts "nsh" OPTION; do
 	case ${OPTION} in
 		n)
 			NO_USER=y
+			;;
+		s)	
+			SKIP_DNF=y
+			;;
+		h)
+			usage
+			exit $EXIT_SUCCESS
 			;;
 		*)
 			echo "Unknown option $OPTION, ignoring"
@@ -77,36 +87,45 @@ then
 	die_at "root user validation"
 fi
 
-# update the fedora packages
-sudo dnf update || die_at "initial dnf update"
-
 # set the GPU memory to 80 (default 32) to support camera
-sudo sed -i s/gpu_mem=32/gpu_mem=80/g /boot/efi/config.txt || die_at "gpu_mem config tweak"
+if [ $(grep "gpu_mem=32" /boot/efi/config.txt) ]
+then
+	sed -i s/gpu_mem=32/gpu_mem=80/g /boot/efi/config.txt || die_at "gpu_mem config tweak"
+fi
 
+if [ -z "$SKIP_DNF" ]
+then
+	# update the fedora packages
+	sudo dnf update || die_at "initial dnf update"
 
-# install window manager and prereqisites
-dnf install -y $PKGS_X || die_at "X and window manager installation"
-dnf install -y $PKGS_APPS || die_at "Apps installation"
-dnf install -y $PKGS_GPIO || die_at "GPIO installation"
+	# install window manager and prereqisites
+	dnf install -y $PKGS_X || die_at "X and window manager installation"
+	dnf install -y $PKGS_APPS || die_at "Apps installation"
+	dnf install -y $PKGS_GPIO || die_at "GPIO installation"
+fi
 
 # unless user sepcifies not to, add rpi/rpi user with sudo privileges
 if [ -z "$NO_USER" ]
 then
-	useradd rpi || die_at "create user rpi"
-	echo "rpi" | passwd --stdin || die_at "set user rpi password"
+	$( [ ! -z "`grep rpi /etc/passwd`" ] || useradd rpi) || die_at "create user rpi"
+	echo "rpi" | passwd rpi --stdin || die_at "set user rpi password"
 	echo 'rpi ALL=(ALL:ALL) ALL' >> /etc/sudoers || die_at "add rpi user to sudoers"
-	su rpi || die_at "switching to rpi user"
+	export RPIHOME="/home/rpi"
+else
+	export RPIHOME="/root"
 fi
 
 
+
 # configure the window manager
-echo ". /etc/X11/xinit/xinitrc-common" > ~/.xinitrc || die_at "add common xinitrc code to local file"
-echo "exec enlightement_start" >> ~/.xinitrc || die_at "add enlighement_start to xinitrc"
+echo ". /etc/X11/xinit/xinitrc-common" > $RPIHOME/.xinitrc || die_at "add common xinitrc code to local file"
+echo "exec enlightement_start" >> $RPIHOME/.xinitrc || die_at "add enlighement_start to xinitrc"
 
 
-echo << EOF
+cat <<EOF
 === script has successfully finished ===
 To start the window manager, run: startx
+
 EOF
 
 exit $SUCCESS
