@@ -127,4 +127,4 @@ cat <<-EOF
 	====== to start the GUI, run: startx ======
 EOF
 
-exit $SUCCESS
+exit $EXIT_SUCCESS
