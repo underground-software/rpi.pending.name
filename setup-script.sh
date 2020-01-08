@@ -24,22 +24,22 @@ EXIT_SUCCESS=0
 EXIT_FAILURE=1
 
 usage() {
-	cat <<EOF
-=== fedora-rpi setup script ===
-usage: setup-script.sh [FLAGS]
+	cat <<-EOF
+	=== fedora-rpi setup script ===
+	usage: setup-script.sh [FLAGS]
 
-available flags:
-	-n: do not create default rpi/rpi user
-	-s: skip installation of packages via dnf
-	-h: show this message and exit
+	available flags:
+		-n: do not create default rpi/rpi user
+		-s: skip installation of packages via dnf
+		-h: show this message and exit
 EOF
 }
 
 die_at() {
-	cat <<EOF
->Fatal error occured at: $1
->You should fix any errors described above and re-run this script
->Exiting with failure...
+	cat <<-EOF
+	>Fatal error occured at: $1
+	>You should fix any errors described above and re-run this script
+	>Exiting with failure...
 EOF
 	exit $EXIT_FAILURE
 }
@@ -120,4 +120,11 @@ fi
 # configure the window manager
 echo ". /etc/X11/xinit/xinitrc-common" > $RPIHOME/.xinitrc || die_at "add common xinitrc code to local file"
 echo "exec enlightement_start" >> $RPIHOME/.xinitrc || die_at "add enlighement_start to xinitrc"
+
+
+cat <<-EOF
+	=== setup script completed with success ===
+	====== to start the GUI, run: startx ======
+EOF
+
 exit $SUCCESS
