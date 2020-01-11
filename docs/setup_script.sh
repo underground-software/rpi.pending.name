@@ -47,8 +47,8 @@ EOF
 # X and window manager related packages
 PKGS_X="xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 enlightenment"
 
-# desktop applications
-PKGS_APPS="terminator firefox"
+# desktop applications and other utilities
+PKGS_APPS="terminator firefox git bc screenfetch"
 
 # latest RPi.GPIO compatibility layer
 # TODO:
