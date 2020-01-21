@@ -45,7 +45,7 @@ EOF
 }
 
 # X and window manager related packages
-PKGS_X="xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 enlightenment"
+PKGS_X="xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth dbus-x11 xorg-x11-drv-fbdev enlightenment"
 
 # desktop applications and other utilities
 PKGS_APPS="terminator firefox git bc screenfetch"
