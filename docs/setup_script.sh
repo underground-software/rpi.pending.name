@@ -124,6 +124,7 @@ echo "exec enlightenment_start" >> $RPIHOME/.xinitrc || die_at "add enlighement_
 
 cat <<-EOF
 	=== setup script completed with success ===
+	=== please logout and login as user rpi ===
 	====== to start the GUI, run: startx ======
 EOF
 
