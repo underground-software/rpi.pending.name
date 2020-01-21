@@ -54,7 +54,7 @@ PKGS_APPS="terminator firefox git bc screenfetch"
 # TODO:
 # 	- new version with bug fixes
 #	- submit to fedora repositories
-PKGS_GPIO="https://github.com/underground-software/python3-libgpiod-rpi/releases/download/v0.1/python3-libgpiod-rpi-0.1-1.aarch64.rpm"
+PKGS_GPIO="https://github.com/underground-software/python3-libgpiod-rpi/releases/download/v0.2/python3-libgpiod-rpi-0.2-2.aarch64.rpm"
 
 # useful libraries: right now this just enables audio
 PKGS_LIBS="alsa-plugins-pulseaudio"

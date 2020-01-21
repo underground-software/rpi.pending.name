@@ -22,4 +22,5 @@ libgpiod's python bindings. libgpiod provides a straightforward interface for in
 with GPIO pins on supported devices via the mainline Linux kernel interface.
 
 #### Releases:
-* [v0.1](https://github.com/underground-software/python3-libgpiod-rpi/releases/tag/v0.1)
+* [v0.2](https://github.com/underground-software/python3-libgpiod-rpi/releases/tag/v0.2) [rpm](https://github.com/underground-software/python3-libgpiod-rpi/releases/download/v0.2/python3-libgpiod-rpi-0.2-2.aarch64.rpm)
+* [v0.1](https://github.com/underground-software/python3-libgpiod-rpi/releases/tag/v0.1) [rpm](https://github.com/underground-software/python3-libgpiod-rpi/releases/download/v0.1/python3-libgpiod-rpi-0.1-1.aarch64.rpm)
