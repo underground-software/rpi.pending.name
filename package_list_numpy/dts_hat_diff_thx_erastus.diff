@@ -1,0 +1,64 @@
+--- bcm2837-rpi-3-b.dts.orig	2020-02-15 20:27:52.770453159 -0500
++++ bcm2837-rpi-3-b.dts	2020-02-15 20:27:45.370517484 -0500
+@@ -580,6 +580,35 @@
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = < 0x15 >;
+ 			clock-frequency = < 0x186a0 >;
++
++			rpi-sense@46 {
++				compatible = "rpi,rpi-sense";
++				reg = < 0x46 >;
++				keys-int-gpios = < 0x10 0x17 0x1 >;
++				status = "okay";
++			};
++
++			lsm9ds1-accel@1c {
++				compatible = "st,lsm9ds1-accel";
++				reg = < 0x1c >;
++				status = "okay";
++			};
++			
++			hts221-humid@5f {
++				compatible = "st,hts221-humid";
++				reg = < 0x5f >;
++				status = "okay";
++			};
++			lps25h-press@5c {
++				compatible = "st,lps25h-press";
++				reg = < 0x5c >;
++				status = "okay";
++			};
++			lsm9ds-magn@6a {
++				compatible = "st,lsm9ds1-magn";
++				status = "okay";
++				reg = < 0x6a >;
++			};
+ 		};
+ 
+ 		i2c@7e805000 {
+@@ -695,6 +724,12 @@
+ 			reg = < 0x7e00b840 0x3c >;
+ 			interrupts = < 0x00 0x02 >;
+ 		};
++		fb {
++			compatible = "brcm,bcm2708-fb";
++			firmware = <0x7>;
++			status = "okay";
++			phandle = <0x73>;
++		};
+ 	};
+ 
+ 	clocks {
+@@ -799,4 +834,12 @@
+ 		reset-gpios = < 0x0a 0x01 0x01 >;
+ 		phandle = < 0x14 >;
+ 	};
++
++	hat {
++		vendor = "Raspberry Pi";
++		product = "Sense Hat";
++		uuid = "ee9f595b-5437-4736-9399-94b4cd2a8896";
++		product_ver = "0x0001";
++		product_id = "0x0001";
++	};
+ };
