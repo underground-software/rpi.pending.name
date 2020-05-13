@@ -1,6 +1,10 @@
-What are we up to? [Check out our Trelllo board](https://trello.com/b/YUh837YR)
+###Frequently Asked Questions (FAQ):
 
-Interested in joining us? [Fill out this form](interest_form.html)
+Q: What is this group up to?
 
-Very interested? [Check out our concise wiki](wiki.html)
+A: [Check out our redmine page](https://build.pending.name)
+
+Q: How can I join?
+
+A: [Join our mailing list](https://groups.google.com/forum/#!forum/fedora-rpi/join)
 
