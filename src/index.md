@@ -2,7 +2,7 @@
 
 Q: What is this group up to?
 
-A: [Check out our redmine page](https://build.pending.name)
+A: [Check out our GitHub project](https://github.com/orgs/underground-software/projects/2)
 
 Q: How can I join?
 
